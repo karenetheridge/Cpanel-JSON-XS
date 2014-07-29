@@ -510,6 +510,16 @@ character, after which more white-space and comments are allowed.
         # neither this one...
   ]
 
+=item * literal ASCII TAB character
+
+Allow literal ASCII TAB in strings despite JSON mandates, that TAB
+character is substituted for "\t" sequence.
+
+  [
+      "Hello\tWorld",
+      "Hello<TAB>World" <- literal <TAB> would not normally be allowed
+  ]
+
 =back
 
 =item $json = $json->canonical ([$enable])

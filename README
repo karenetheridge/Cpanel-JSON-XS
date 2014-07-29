@@ -439,6 +439,16 @@ OBJECT-ORIENTED INTERFACE
                     # neither this one...
               ]
 
+        *   literal ASCII TAB character
+
+            Allow literal ASCII TAB in strings despite JSON mandates, that
+            TAB character is substituted for "\t" sequence.
+
+              [
+                  "Hello\tWorld",
+                  "Hello<TAB>World" <- literal <TAB> would not normally be allowed
+              ]
+
     $json = $json->canonical ([$enable])
     $enabled = $json->get_canonical
         If $enable is true (or missing), then the "encode" method will
